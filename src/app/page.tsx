@@ -1,7 +1,6 @@
 import { NavbarDemo } from "@/components/hero";
 import AboutSection from "@/components/aboutsection";
 import { NewsCarousel } from "@/components/NewsCarousel";
-import { Footer } from "@/components/footer";
 
 export default function HomePage() {
   return (
@@ -9,7 +8,6 @@ export default function HomePage() {
       <NavbarDemo />
       <NewsCarousel />
       <AboutSection />
-      <Footer />
     </>
   );
 }
