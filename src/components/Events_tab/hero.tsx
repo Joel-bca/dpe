@@ -20,7 +20,7 @@ export function HeroSection() {
         transition={{ duration: 1 }}
       >
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">
-          Department of Physical Education | BYC
+          Events
         </h1>
         <p className="mt-6 text-lg md:text-xl text-gray-200">
           Empowering athletes, shaping champions, and building a community of

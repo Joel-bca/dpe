@@ -44,12 +44,6 @@ export function Nav() {
           />
           <div className="flex items-center gap-3">
             <NavbarButton
-              variant="secondary"
-              className="bg-white/10 text-white hover:bg-white/20"
-            >
-              Login
-            </NavbarButton>
-            <NavbarButton
               variant="primary"
               className="bg-blue-600 hover:bg-blue-700 text-white"
             >
@@ -87,13 +81,6 @@ export function Nav() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4 mt-6">
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-              >
-                Login
-              </NavbarButton>
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="secondary"
