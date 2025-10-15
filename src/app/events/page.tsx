@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { HeroSection } from "@/components/events_tab/hero";
-import { motion } from "motion/react";
+import { HeroSection } from "@/components/Events_tab/hero";
+import { motion } from "framer-motion";
 
 export default function EventsPage() {
   const [events, setEvents] = useState<any[]>([]);
@@ -11,30 +11,33 @@ export default function EventsPage() {
 
   useEffect(() => {
     fetch("/api/events")
-      .then((r) => r.json())
+      .then((r) => {
+        if (!r.ok) throw new Error("Failed to fetch events");
+        return r.json();
+      })
       .then((data) => {
+        if (!Array.isArray(data)) throw new Error("Invalid data format");
         setEvents(data);
-        setLoading(false);
       })
       .catch((err) => {
         console.error(err);
-        setLoading(false);
-      });
+      })
+      .finally(() => setLoading(false));
   }, []);
 
   return (
     <div className="bg-gradient-to-br from-[#e7f0ff] to-[#fdfdff] min-h-screen text-gray-900">
-      {/* Top Hero */}
-      <HeroSection />
+      <HeroSection page="events" />
 
-      {/* Event List */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
           Explore Our Events
         </h2>
 
         {loading ? (
-          <div className="text-center text-gray-500 text-lg animate-pulse">Loading events...</div>
+          <div className="text-center text-gray-500 text-lg animate-pulse">
+            Loading events...
+          </div>
         ) : (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {events.map((event, index) => (
