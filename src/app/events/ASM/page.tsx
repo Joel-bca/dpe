@@ -131,8 +131,8 @@ export default function ASMPage() {
         {/* ===== REGISTER SECTION ===== */}
         <div className="text-center mt-20">
           <HoverBorderGradient className="text-lg font-medium text-white">
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              Go to Registration Portal
+            <a href="/events/ASM/register">
+              Register Now
             </a>
           </HoverBorderGradient>
         </div>
